@@ -93,6 +93,8 @@ func NewTopologyProbe(name string, ctx tp.Context, bundle *probe.Bundle) (probe.
 		return bess.NewProbe(ctx, bundle)
 	case "hardware":
 		return hardware.NewProbe(ctx, bundle)
+	case "ovn":
+		return ovn.NewProbe(ctx, bundle)
 	default:
 		return nil, fmt.Errorf("unsupported probe %s", name)
 	}
